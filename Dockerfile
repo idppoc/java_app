@@ -1,13 +1,10 @@
-FROM golang:alpine AS builder
-RUN mkdir /goserver
-ADD . /goserver/
-WORKDIR /goserver
-RUN go build -ldflags '-s -w' -o goserver .
+FROM openjdk:8-jre-slim
 
-FROM vault:latest
-USER root
-COPY --from=builder /vault-sidecar/vault-sidecar /vault-sidecar
-RUN apk update --no-cache && apk upgrade && \
-    chmod +x /vault-sidecar
-USER vault
-CMD ["/vault-sidecar"]
+EXPOSE 8080
+
+RUN mkdir /app
+
+COPY build/libs/*.jar /app/spring-boot-application.jar
+
+ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
+

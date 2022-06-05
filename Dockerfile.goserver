@@ -1,0 +1,10 @@
+FROM golang:alpine AS builder
+RUN mkdir /goserver
+ADD . /goserver/
+WORKDIR /goserver
+RUN go build -ldflags '-s -w' -o goserver .
+
+FROM alpine:latest
+USER root
+COPY --from=builder /goserver/goserver /goserver
+CMD ["/goserver"]
