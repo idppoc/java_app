@@ -3,12 +3,12 @@ entries:
   goserver:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-06-14T20:06:01.016557+05:30"
+    created: "2022-06-18T22:29:08.4173+05:30"
     description: A Helm chart for Kubernetes
     digest: d08287cbe010748a6b5c52b00bee571ef29487cc718ae72dad82864066e3776b
     name: goserver
     type: application
     urls:
-    - https://idppoc.github.com/java_app/go/helm/goserver-0.1.0.tgz
+    - https://idppoc.github.com/java_app/goserver-0.1.0.tgz
     version: 0.1.0
-generated: "2022-06-14T20:06:01.015272+05:30"
+generated: "2022-06-18T22:29:08.415635+05:30"
