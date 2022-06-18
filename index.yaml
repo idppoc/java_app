@@ -9,6 +9,6 @@ entries:
     name: goserver
     type: application
     urls:
-    - https://idppoc.github.io/java_app/goserver-0.1.0.tgz
-    version: 0.1.0
+    - https://idppoc.github.io/java_app/goserver-0.1.1.tgz
+    version: 0.1.1
 generated: "2022-06-18T22:29:08.415635+05:30"
